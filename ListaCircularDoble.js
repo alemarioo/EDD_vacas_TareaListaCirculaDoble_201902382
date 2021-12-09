@@ -1,5 +1,3 @@
-console.log("asdad");
-
 class ListaCircular{
     inicio = null
     ultimo = null
@@ -12,35 +10,36 @@ class ListaCircular{
             this.ultimo.siguiente = this.inicio;
         }else{
             let temp = new NodoDoble(this.ultimo.anterior, dato, this.ultimo.siguiente);
-            this.ultimo.anterior.siguiente = temp
-            this.ultimo.siguiente.anterior = temp
-            this.ultimo = temp
+            this.ultimo.anterior.siguiente = temp;
+            this.ultimo.siguiente.anterior = temp;
+            this.ultimo = temp;
         }
     }
 
     imprimir(){
         let temp = this.inicio;
-        while (temp!= this.ultimo) {
+        do {
             console.log(temp.dato);
-            temp = temp.siguiente
-        }
+            temp = temp.siguiente;
+        } while (temp != this.inicio);
+        
     }
 
     vacio(){
-        return this.inicio == null
+        return this.inicio == null;
     }
 }
 
 class NodoDoble
 {
-    anterior = null
-    siguiente = null
-    dato = null
+    anterior = null;
+    siguiente = null;
+    dato = null;
 
     constructor(anterior,dato, siguiente){
-        this.dato = dato
-        this.siguiente = siguiente
-        this.anterior = anterior
+        this.dato = dato;
+        this.siguiente = siguiente;
+        this.anterior = anterior;
     }
 }
 
